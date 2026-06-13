@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BlynsAccount™</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#799EFF">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -69,7 +70,9 @@
             transform: translateY(-1px);
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-weight: 600;
             letter-spacing: -0.5px;
         }
@@ -96,9 +99,17 @@
             animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
         }
 
-        .input-group:nth-child(1) { animation-delay: 0.1s; }
-        .input-group:nth-child(2) { animation-delay: 0.2s; }
-        .input-group:nth-child(3) { animation-delay: 0.3s; }
+        .input-group:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .input-group:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .input-group:nth-child(3) {
+            animation-delay: 0.3s;
+        }
 
         .input-group label {
             display: block;
@@ -125,7 +136,9 @@
             transform: translateY(-2px);
         }
 
-        .password-wrapper { position: relative; }
+        .password-wrapper {
+            position: relative;
+        }
 
         .password-toggle {
             position: absolute;
@@ -139,7 +152,9 @@
             transition: color 0.3s ease;
         }
 
-        .password-toggle:hover { color: var(--text-main); }
+        .password-toggle:hover {
+            color: var(--text-main);
+        }
 
         /* Buttons */
         .btn {
@@ -172,7 +187,9 @@
             box-shadow: 0 6px 20px rgba(121, 158, 255, 0.45);
         }
 
-        .btn-primary:active { transform: translateY(1px); }
+        .btn-primary:active {
+            transform: translateY(1px);
+        }
 
         .btn-primary:disabled {
             background-color: var(--border-color);
@@ -206,18 +223,39 @@
 
         /* Custom Animations */
         @keyframes slideUpFade {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes scaleIn {
-            0% { opacity: 0; transform: scale(0.95); }
-            100% { opacity: 1; transform: scale(1); }
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @keyframes warpIn {
-            0% { opacity: 0; transform: translateY(30px) scale(0.98) rotateX(-5deg); }
-            100% { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); }
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98) rotateX(-5deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0deg);
+            }
         }
 
         .view-section {
@@ -236,8 +274,13 @@
         }
 
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
 
         .spinner {
@@ -251,7 +294,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Global Loader Overlay */
@@ -320,11 +365,20 @@
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
-        .hidden { display: none !important; }
+        .hidden {
+            display: none !important;
+        }
 
         /* ==========================================
            LAYOUTS: DESKTOP VS MOBILE
@@ -408,18 +462,22 @@
             word-break: break-word;
         }
 
-        .dash-card:hover { box-shadow: var(--shadow-lg); }
+        .dash-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
 
         /* Desktop Strict CSS Rules */
         @media (min-width: 1024px) {
             body {
-                overflow: hidden; /* ELAK SCROLL DI DESKTOP */
+                overflow: hidden;
+                /* ELAK SCROLL DI DESKTOP */
             }
+
             .app-container {
                 height: 100vh;
                 overflow: hidden;
             }
-            
+
             .auth-layout {
                 flex-direction: row;
                 height: 100vh;
@@ -459,18 +517,21 @@
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
-                overflow: hidden; /* ELAK SCROLL DI DESKTOP */
+                overflow: hidden;
+                /* ELAK SCROLL DI DESKTOP */
             }
 
             .dash-grid {
                 display: grid;
                 grid-template-columns: 360px 1fr;
                 gap: 40px;
-                align-items: center; /* Susun ke tengah vertical */
+                align-items: center;
+                /* Susun ke tengah vertical */
                 flex: 1;
-                overflow: hidden; /* ELAK SCROLL DI DESKTOP */
+                overflow: hidden;
+                /* ELAK SCROLL DI DESKTOP */
             }
-            
+
             .dash-header img {
                 max-width: 160px;
             }
@@ -495,7 +556,8 @@
         /* GRID ACTION CARDS (TILES PATTERN) */
         .action-cards {
             display: grid;
-            grid-template-columns: repeat(2, 130px); /* Mobile: 2x3 grid tiles */
+            grid-template-columns: repeat(2, 130px);
+            /* Mobile: 2x3 grid tiles */
             gap: 16px;
             margin-top: 24px;
             justify-content: center;
@@ -503,7 +565,8 @@
 
         @media (min-width: 1024px) {
             .action-cards {
-                grid-template-columns: repeat(3, 130px); /* Desktop: 3x2 grid tiles */
+                grid-template-columns: repeat(3, 130px);
+                /* Desktop: 3x2 grid tiles */
                 justify-content: start;
                 gap: 20px;
             }
@@ -519,16 +582,16 @@
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             font-weight: 600;
             font-size: 13px;
-            
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            
+
             /* Saiz Statik Paksa Jadi Petak */
             width: 130px;
-            height: 130px; 
+            height: 130px;
         }
 
         .action-card:hover {
@@ -603,6 +666,7 @@
             gap: 8px;
             margin-top: 12px;
         }
+
         .strength-dot {
             height: 6px;
             flex: 1;
@@ -610,9 +674,18 @@
             background: #E5E5EA;
             transition: background 0.4s ease;
         }
-        .str-weak.active { background: var(--error-color); }
-        .str-fair.active { background: var(--accent-yellow); }
-        .str-strong.active { background: var(--success-color); }
+
+        .str-weak.active {
+            background: var(--error-color);
+        }
+
+        .str-fair.active {
+            background: var(--accent-yellow);
+        }
+
+        .str-strong.active {
+            background: var(--success-color);
+        }
 
         .alert-box {
             background: #FFF5F5;
@@ -638,8 +711,14 @@
             border: 1px solid #E5EDFF;
         }
 
-        .text-center { text-align: center; }
-        .mt-4 { margin-top: 24px; }
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 24px;
+        }
+
         .flex-between {
             display: flex;
             justify-content: space-between;
@@ -1862,8 +1941,7 @@
                                 alert(`Anda terkeluar dari akaun kerana di log out oleh ${revokedBy}`);
                                 await signOut(auth);
                                 window.location.reload();
-                            }
-                            else if (data.security?.devices && !data.security.devices.includes(currentDevice)) {
+                            } else if (data.security?.devices && !data.security.devices.includes(currentDevice)) {
                                 alert(`Anda terkeluar dari akaun kerana sesi ditamatkan oleh peranti utama.`);
                                 await signOut(auth);
                                 window.location.reload();
@@ -2026,7 +2104,7 @@
                 // 2. Polling untuk check status pengesahan
                 let verifyPollEmailInterval = setInterval(async () => {
                     await auth.currentUser.reload();
-                    
+
                     // Check jika emel sudah bertukar di Firebase
                     if (auth.currentUser.email === val) {
                         clearInterval(verifyPollEmailInterval);
@@ -2043,10 +2121,10 @@
 
                         currentUserData.auth.email = val;
                         closeModal(); // Tutup modal terus supaya pengguna tak keliru
-                        
+
                         // 3. Inform pengguna dan Logout
                         showToast("Your New Email Has Been Verified and Changed!.", "success");
-                        
+
                         setTimeout(async () => {
                             window.location.reload(); // Refresh untuk balik ke skrin login
                         }, 5000); // Tunggu 5 saat untuk pengguna baca toast
