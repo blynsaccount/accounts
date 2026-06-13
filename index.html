@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BlynsAccount™</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#799EFF">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ==========================================
@@ -62,9 +69,7 @@
             transform: translateY(-1px);
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             font-weight: 600;
             letter-spacing: -0.5px;
         }
@@ -76,7 +81,6 @@
             display: block;
         }
 
-        /* SVG Icons */
         .svg-icon {
             width: 20px;
             height: 20px;
@@ -92,17 +96,9 @@
             animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
         }
 
-        .input-group:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .input-group:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .input-group:nth-child(3) {
-            animation-delay: 0.3s;
-        }
+        .input-group:nth-child(1) { animation-delay: 0.1s; }
+        .input-group:nth-child(2) { animation-delay: 0.2s; }
+        .input-group:nth-child(3) { animation-delay: 0.3s; }
 
         .input-group label {
             display: block;
@@ -129,9 +125,7 @@
             transform: translateY(-2px);
         }
 
-        .password-wrapper {
-            position: relative;
-        }
+        .password-wrapper { position: relative; }
 
         .password-toggle {
             position: absolute;
@@ -145,9 +139,7 @@
             transition: color 0.3s ease;
         }
 
-        .password-toggle:hover {
-            color: var(--text-main);
-        }
+        .password-toggle:hover { color: var(--text-main); }
 
         /* Buttons */
         .btn {
@@ -180,9 +172,7 @@
             box-shadow: 0 6px 20px rgba(121, 158, 255, 0.45);
         }
 
-        .btn-primary:active {
-            transform: translateY(1px);
-        }
+        .btn-primary:active { transform: translateY(1px); }
 
         .btn-primary:disabled {
             background-color: var(--border-color);
@@ -216,39 +206,18 @@
 
         /* Custom Animations */
         @keyframes slideUpFade {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes scaleIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         @keyframes warpIn {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.98) rotateX(-5deg);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1) rotateX(0deg);
-            }
+            0% { opacity: 0; transform: translateY(30px) scale(0.98) rotateX(-5deg); }
+            100% { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); }
         }
 
         .view-section {
@@ -267,13 +236,8 @@
         }
 
         @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         .spinner {
@@ -287,9 +251,7 @@
         }
 
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
 
         /* Global Loader Overlay */
@@ -310,6 +272,7 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.4s ease;
+            padding: 20px;
         }
 
         .global-loader.active {
@@ -353,23 +316,15 @@
             align-items: center;
             gap: 12px;
             border: 1px solid var(--border-color);
+            line-height: 1.4;
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .hidden {
-            display: none !important;
-        }
+        .hidden { display: none !important; }
 
         /* ==========================================
            LAYOUTS: DESKTOP VS MOBILE
@@ -413,16 +368,10 @@
             padding: 40px 30px;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm);
-
-            /* TETAPAN TERBAIK: */
             max-height: 85vh;
-            /* Hadkan ketinggian kotak supaya ia tidak 'lari' dari skrin */
             overflow-y: auto;
-            /* Aktifkan scroll hanya jika kandungan melebihi 85% skrin[cite: 2] */
             display: flex;
             flex-direction: column;
-
-            /* Memastikan scroll lancar pada peranti sentuh */
             -webkit-overflow-scrolling: touch;
         }
 
@@ -430,14 +379,17 @@
             padding: 20px;
         }
 
+        /* HEADER UPDATED (Sign Out di Header) */
         .dash-header {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 30px;
             animation: slideUpFade 0.6s ease;
         }
 
         .dash-header img {
-            max-width: 150px;
+            max-width: 130px;
         }
 
         .dash-grid {
@@ -452,13 +404,22 @@
             padding: 28px;
             box-shadow: var(--shadow-sm);
             transition: box-shadow 0.3s ease;
+            overflow: hidden;
+            word-break: break-word;
         }
 
-        .dash-card:hover {
-            box-shadow: var(--shadow-lg);
-        }
+        .dash-card:hover { box-shadow: var(--shadow-lg); }
 
+        /* Desktop Strict CSS Rules */
         @media (min-width: 1024px) {
+            body {
+                overflow: hidden; /* ELAK SCROLL DI DESKTOP */
+            }
+            .app-container {
+                height: 100vh;
+                overflow: hidden;
+            }
+            
             .auth-layout {
                 flex-direction: row;
                 height: 100vh;
@@ -492,23 +453,26 @@
             }
 
             .dash-layout {
-                max-width: 1200px;
+                max-width: 1100px;
                 margin: 0 auto;
-                padding: 50px 30px;
-            }
-
-            .dash-header {
-                text-align: left;
+                padding: 30px;
+                height: 100vh;
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
+                flex-direction: column;
+                overflow: hidden; /* ELAK SCROLL DI DESKTOP */
             }
 
             .dash-grid {
                 display: grid;
-                grid-template-columns: 380px 1fr;
-                align-items: start;
+                grid-template-columns: 360px 1fr;
                 gap: 40px;
+                align-items: center; /* Susun ke tengah vertical */
+                flex: 1;
+                overflow: hidden; /* ELAK SCROLL DI DESKTOP */
+            }
+            
+            .dash-header img {
+                max-width: 160px;
             }
         }
 
@@ -528,32 +492,49 @@
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
         }
 
+        /* GRID ACTION CARDS (TILES PATTERN) */
         .action-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 130px); /* Mobile: 2x3 grid tiles */
+            gap: 16px;
             margin-top: 24px;
+            justify-content: center;
+        }
+
+        @media (min-width: 1024px) {
+            .action-cards {
+                grid-template-columns: repeat(3, 130px); /* Desktop: 3x2 grid tiles */
+                justify-content: start;
+                gap: 20px;
+            }
         }
 
         .action-card {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 24px 20px;
+            padding: 16px 10px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             font-weight: 600;
+            font-size: 13px;
+            
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
+            
+            /* Saiz Statik Paksa Jadi Petak */
+            width: 130px;
+            height: 130px; 
         }
 
         .action-card:hover {
             border-color: var(--primary);
             box-shadow: var(--shadow-lg);
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-4px) scale(1.05);
             color: var(--primary);
         }
 
@@ -622,7 +603,6 @@
             gap: 8px;
             margin-top: 12px;
         }
-
         .strength-dot {
             height: 6px;
             flex: 1;
@@ -630,18 +610,9 @@
             background: #E5E5EA;
             transition: background 0.4s ease;
         }
-
-        .str-weak.active {
-            background: var(--error-color);
-        }
-
-        .str-fair.active {
-            background: var(--accent-yellow);
-        }
-
-        .str-strong.active {
-            background: var(--success-color);
-        }
+        .str-weak.active { background: var(--error-color); }
+        .str-fair.active { background: var(--accent-yellow); }
+        .str-strong.active { background: var(--success-color); }
 
         .alert-box {
             background: #FFF5F5;
@@ -667,14 +638,8 @@
             border: 1px solid #E5EDFF;
         }
 
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-4 {
-            margin-top: 24px;
-        }
-
+        .text-center { text-align: center; }
+        .mt-4 { margin-top: 24px; }
         .flex-between {
             display: flex;
             justify-content: space-between;
@@ -688,25 +653,19 @@
 
     <div id="toast-container"></div>
 
-    <!-- Global Fullscreen Loader -->
     <div id="global-loader" class="global-loader">
         <div class="global-spinner"></div>
-        <h3 id="global-loader-text" style="color:var(--text-main); font-weight:500;">Processing securely...</h3>
+        <h3 id="global-loader-text" style="color:var(--text-main); font-weight:500; text-align:center; white-space:pre-line; line-height:1.6;">Loading your account...</h3>
     </div>
 
-    <!-- MAIN APP WRAPPER -->
     <div id="app" class="app-container">
 
-        <!-- ==========================================
-             AUTH VIEWS
-             ========================================== -->
         <div id="auth-group" class="auth-layout view-section">
             <div class="auth-banner">
                 <img src="https://i.postimg.cc/v85Nd3r1/3.png" alt="Blyns Account™" class="logo-img">
             </div>
             <div class="auth-content">
 
-                <!-- VIEW: HOME -->
                 <div id="view-home" class="auth-box">
                     <h2 class="text-center" style="margin-bottom: 32px; font-size:24px;">Welcome to Account Management</h2>
                     <button class="btn btn-primary" onclick="navigate('login')" style="margin-bottom: 16px;">
@@ -728,7 +687,6 @@
                     </div>
                 </div>
 
-                <!-- VIEW: LOGIN -->
                 <div id="view-login" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Sign In</h2>
                     <p style="color:var(--text-muted); margin-bottom: 32px; font-size:14px;">Please enter your credentials to continue.</p>
@@ -765,7 +723,6 @@
                     <div class="mt-4 text-center"><a onclick="navigate('home')">← Back to Menu</a></div>
                 </div>
 
-                <!-- VIEW: FORGOT PASSWORD -->
                 <div id="view-forgot-password" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Reset Password</h2>
                     <p style="color:var(--text-muted); margin-bottom: 32px; font-size:14px;">We'll send you a secure link to reset your password.</p>
@@ -777,13 +734,12 @@
                     <button class="btn btn-primary" onclick="handleResetPassword()" id="btn-reset-pass">Send Reset Link</button>
                     <hr style="margin: 32px 0;">
                     <p style="font-size: 14px; color: var(--text-muted); text-align: center; line-height:1.6;">
-                        Please check your inbox or spam folder.<br>
+                        Please check your INBOX or SPAM folder.<br>
                         Follow the instructions in the email to proceed.
                     </p>
                     <div class="mt-4 text-center"><a onclick="navigate('home')">← Back</a></div>
                 </div>
 
-                <!-- VIEW: FORGOT EMAIL -->
                 <div id="view-forgot-email" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Find Your Account</h2>
                     <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 24px; line-height:1.6;">For your security, we cannot reveal your full email address directly.</p>
@@ -803,21 +759,16 @@
                         </svg>
                         <div>
                             <b style="color:var(--text-main);">Security Policy:</b><br>
-                            <span style="color:var(--text-muted);">To protect your privacy, the email address will be partially masked. (e.g., ha*****345@gmail.com)</span>
+                            <span style="color:var(--text-muted);">To protect your privacy, the email address will be partially masked. (e.g., qa*****345@gmail.com)</span>
                         </div>
                     </div>
                     <div class="mt-4 text-center"><a onclick="navigate('home')">← Back</a></div>
                 </div>
 
-                <!-- ==========================================
-                     REGISTER ALGORITHM VIEWS
-                     ========================================== -->
-
-                <!-- REG 1: Loader -> TNC & Quiz -->
                 <div id="view-register-1" class="auth-box hidden">
                     <div id="reg-loader-1" class="text-center" style="padding: 40px 0;">
                         <div class="spinner" style="border-top-color: var(--primary); width:40px; height:40px; border-width:4px; margin-bottom:20px;"></div>
-                        <p style="color:var(--text-main); font-weight:500;">Establishing a secure connection...</p>
+                        <p style="color:var(--text-main); font-weight:500;">Establishing connection...</p>
                         <p style="color:var(--text-muted); font-size:13px; margin-top:8px;">Please wait while we initialize your setup.</p>
                     </div>
 
@@ -859,7 +810,6 @@
                     </div>
                 </div>
 
-                <!-- REG 2: Name -->
                 <div id="view-register-2" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Personal Detail</h2>
                     <p style="color:var(--text-muted); margin-bottom: 32px; font-size:14px;">Step 2 of 5</p>
@@ -874,7 +824,6 @@
                     </div>
                 </div>
 
-                <!-- REG 3: Username -->
                 <div id="view-register-3" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Choose a Username</h2>
                     <p style="color:var(--text-muted); margin-bottom: 32px; font-size:14px;">Step 3 of 5</p>
@@ -901,7 +850,6 @@
                     </div>
                 </div>
 
-                <!-- REG 4: Email Verification -->
                 <div id="view-register-4" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Secure Your Account</h2>
                     <p style="color:var(--text-muted); margin-bottom: 32px; font-size:14px;">Step 4 of 5</p>
@@ -918,7 +866,7 @@
                         <svg class="svg-icon" style="color:var(--error-color); min-width:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                         </svg>
-                        <span style="color:var(--error-color); font-weight:500; font-size:13px;">Email verification is required to proceed to the final step.</span>
+                        <span style="color:var(--error-color); font-weight:500; font-size:13px;">Email verification is required to proceed to the final step. Please check your INBOX or SPAM folder.</span>
                     </div>
 
                     <p id="reg-verify-loader" class="text-center hidden" style="font-size: 14px; font-weight:500; color:var(--primary); animation:pulse 2s infinite;">Waiting for verification to complete...</p>
@@ -929,7 +877,6 @@
                     </div>
                 </div>
 
-                <!-- REG 5: Password -->
                 <div id="view-register-5" class="auth-box hidden">
                     <h2 style="margin-bottom: 8px;">Create a Password</h2>
                     <p style="color:var(--text-muted); margin-bottom: 32px; font-size:14px;">Final Step</p>
@@ -980,13 +927,12 @@
                     </div>
                 </div>
 
-                <!-- REG 6: Creating... -->
                 <div id="view-register-6" class="auth-box hidden text-center">
 
                     <div id="reg-process-loading" style="padding: 40px 0;">
                         <div class="spinner" style="border-top-color: var(--primary); width:50px; height:50px; border-width:5px; margin-bottom:24px;"></div>
                         <h2 style="margin-bottom: 8px;">Finalizing your account...</h2>
-                        <p style="color:var(--text-muted); font-size:14px;">We are securely setting up your profile.</p>
+                        <p style="color:var(--text-muted); font-size:14px;">We are setting up your profile securely.</p>
 
                         <div style="margin-top:40px; text-align:left;">
                             <div class="skeleton" style="height: 12px; width: 100%; margin-bottom: 16px; border-radius:10px;"></div>
@@ -1035,18 +981,19 @@
             </div>
         </div>
 
-        <!-- ==========================================
-             DASHBOARD VIEW (Logged In)
-             ========================================== -->
         <div id="dashboard-group" class="dash-layout view-section hidden">
             <div class="dash-header">
                 <img src="https://i.postimg.cc/v85Nd3r1/3.png" alt="BlynsAccount™" class="logo-img">
+                <button class="btn" style="width: auto; padding: 10px 18px; font-size: 14px; background: #FFF0F0; color: var(--error-color); border: 1px solid #FFE5E5; box-shadow:none; gap:6px;" onclick="handleLogout()">
+                    <svg class="svg-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin:0; width:18px; height:18px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    Sign Out
+                </button>
             </div>
 
             <div class="dash-grid">
-                <!-- Sidebar / Left Col -->
                 <div style="animation: slideUpFade 0.6s ease 0.1s backwards;">
-                    <!-- Profile Card -->
                     <div class="dash-card" style="margin-bottom: 24px; background: linear-gradient(135deg, var(--primary) 0%, var(--surface-color) 120%); position:relative; overflow:hidden;">
                         <div style="position:absolute; top:-20px; right:-20px; opacity:0.1;">
                             <svg width="150" height="150" fill="currentColor" viewBox="0 0 24 24">
@@ -1063,7 +1010,6 @@
                         <p id="dash-username" style="font-weight: 500; font-size:15px; color: rgba(255,255,255,0.9); margin-top:12px;">@username</p>
                     </div>
 
-                    <!-- Security Section -->
                     <div class="dash-card">
                         <div style="display:flex; align-items:center; gap:10px; margin-bottom: 20px;">
                             <div style="width:36px; height:36px; background:#F0F4FF; border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--primary);">
@@ -1087,11 +1033,8 @@
 
                         <button class="btn btn-secondary" style="padding: 12px; font-size: 14px;" onclick="openDeviceManagement()">Manage Devices</button>
                     </div>
-
-                    <button class="btn" style="background: var(--error-color); color: white; margin-top: 24px; font-weight:600; box-shadow: 0 4px 14px rgba(255, 59, 48, 0.2);" onclick="handleLogout()">Sign Out Securely</button>
                 </div>
 
-                <!-- Main Content / Right Col -->
                 <div style="animation: slideUpFade 0.6s ease 0.2s backwards;">
                     <h2 style="font-size: 22px; margin-bottom: 24px;">Account Settings</h2>
 
@@ -1147,6 +1090,15 @@
                             </div>
                             Security Check
                         </div>
+
+                        <div class="action-card" onclick="openAction('logdata')">
+                            <div style="width:48px; height:48px; background:#FEFFC4; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#FFBC4C; margin-bottom:8px;">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            Log Data Mentah
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1154,12 +1106,8 @@
 
     </div>
 
-    <!-- ==========================================
-         MODALS (Glassmorphism Overlays)
-         ========================================== -->
     <div id="modal-overlay" class="modal-overlay">
 
-        <!-- MODAL: CHANGE NAME -->
         <div id="modal-name" class="modal-box hidden">
             <button class="modal-close" onclick="closeModal()">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1191,7 +1139,6 @@
             </p>
         </div>
 
-        <!-- MODAL: CHANGE EMAIL -->
         <div id="modal-email" class="modal-box hidden">
             <button class="modal-close" onclick="closeModal()">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1213,13 +1160,12 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                 </svg>
                 <div>
-                    <span style="color:var(--error-color); font-weight:600;">Security Requirement:</span><br>
-                    <span style="color:var(--text-main); font-size:13px;">This updates your core Authentication identity. You must verify ownership of the new email address before changes are permanently applied.</span>
+                    <span style="color:var(--error-color); font-weight:600;">Important Notice:</span><br>
+                    <span style="color:var(--text-main); font-size:13px;">This updates your core Authentication identity. You must verify ownership of the new email address before changes are permanently applied. If the verification email did not show, please check INBOX or SPAM folder.</span>
                 </div>
             </div>
         </div>
 
-        <!-- MODAL: CHANGE PASSWORD -->
         <div id="modal-password" class="modal-box hidden">
             <button class="modal-close" onclick="closeModal()">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1237,7 +1183,6 @@
             </p>
         </div>
 
-        <!-- MODAL: CHANGE USERNAME -->
         <div id="modal-username" class="modal-box hidden">
             <button class="modal-close" onclick="closeModal()">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1273,7 +1218,6 @@
             </div>
         </div>
 
-        <!-- MODAL: SECURITY CHECK -->
         <div id="modal-security" class="modal-box hidden">
             <button class="modal-close" onclick="closeModal()">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1305,7 +1249,30 @@
             <button class="btn btn-secondary" onclick="closeModal()">Close Window</button>
         </div>
 
-        <!-- MODAL: DEVICE MANAGEMENT -->
+        <div id="modal-logdata" class="modal-box hidden">
+            <button class="modal-close" onclick="closeModal()">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h2 style="margin-bottom: 24px;">RAW Log Data</h2>
+
+            <div id="logdata-auth-section">
+                <p style="color:var(--text-muted); font-size:14px; margin-bottom:16px;">Please enter your password to continue.</p>
+                <div class="input-group">
+                    <input type="password" id="logdata-password" placeholder="Kata Laluan">
+                </div>
+                <button class="btn btn-primary" id="btn-verify-logdata" onclick="verifyLogDataPassword()">Sahkan Identiti</button>
+            </div>
+
+            <div id="logdata-content-section" class="hidden">
+                <p style="color:var(--text-muted); font-size:13px; margin-bottom:12px;">This is the real raw lg data fetched from our Firestore.</p>
+                <div style="background:#1D1D1F; color:#34C759; padding:16px; border-radius:var(--radius-md); max-height:300px; overflow-y:auto; font-family:monospace; font-size:12px; white-space:pre-wrap; word-break:break-all;">
+                    <pre id="logdata-raw-json"></pre>
+                </div>
+            </div>
+        </div>
+
         <div id="modal-devices" class="modal-box hidden">
             <button class="modal-close" onclick="closeModal()">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1316,7 +1283,6 @@
             <p style="color:var(--text-muted); font-size:14px; margin-bottom: 24px;">Manage where you're currently logged in.</p>
 
             <div id="device-list-container" style="max-height:300px; overflow-y:auto; margin-bottom:24px;">
-                <!-- Real device data will be populated here -->
                 <div class="text-center" style="padding:20px;">
                     <div class="spinner" style="border-top-color:var(--primary); width:30px; height:30px;"></div>
                 </div>
@@ -1327,13 +1293,11 @@
 
     </div>
 
-    <!-- ==========================================
-         JAVASCRIPT LOGIC & FIREBASE INIT
-         ========================================== -->
     <script type="module">
         import {
             initializeApp
         } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+
         import {
             getAuth,
             createUserWithEmailAndPassword,
@@ -1346,8 +1310,11 @@
             setPersistence,
             browserLocalPersistence,
             browserSessionPersistence,
-            updatePassword
+            updatePassword,
+            EmailAuthProvider,
+            reauthenticateWithCredential
         } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
         import {
             getFirestore,
             doc,
@@ -1358,7 +1325,9 @@
             where,
             getDocs,
             updateDoc,
-            deleteDoc
+            deleteDoc,
+            arrayUnion,
+            onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
         // Configuration
@@ -1377,8 +1346,9 @@
         const db = getFirestore(app);
 
         let currentUserData = null;
-        let currentUserDocId = null; // IMPORTANT: In this architecture, Doc ID = Username
+        let currentUserDocId = null;
         let isChangeLocked = false;
+        let sessionListener = null;
 
         // Registration State
         const regData = {
@@ -1424,7 +1394,6 @@
                 const target = document.getElementById('view-' + viewId);
                 if (target) {
                     target.classList.remove('hidden');
-                    // Retrigger animation
                     target.style.animation = 'none';
                     target.offsetHeight; /* trigger reflow */
                     target.style.animation = null;
@@ -1467,13 +1436,24 @@
             document.getElementById('modal-overlay').classList.remove('active');
         };
 
-        window.showGlobalLoader = function(text = "Processing securely...") {
-            document.getElementById('global-loader-text').innerText = text;
+        // NEW SMART LOADER 
+        let globalLoaderTimeout;
+        window.showGlobalLoader = function(text = "Loading your account...") {
+            const textEl = document.getElementById('global-loader-text');
+            textEl.innerText = text;
             document.getElementById('global-loader').classList.add('active');
+
+            clearTimeout(globalLoaderTimeout);
+            globalLoaderTimeout = setTimeout(() => {
+                if (document.getElementById('global-loader').classList.contains('active')) {
+                    textEl.innerText = text + "\n\nThis may take a while.";
+                }
+            }, 5000); // Trigger message after 5 seconds
         }
 
         window.hideGlobalLoader = function() {
             document.getElementById('global-loader').classList.remove('active');
+            clearTimeout(globalLoaderTimeout);
         }
 
         // --- REGISTRATION FLOW ---
@@ -1529,7 +1509,6 @@
             clearTimeout(userCheckTimer);
             userCheckTimer = setTimeout(async () => {
                 try {
-                    // Optimized Real-time check: Since Doc ID is the username
                     const docSnap = await getDoc(doc(db, "users", val));
                     if (!docSnap.exists()) {
                         stat.innerHTML = '<span style="color:var(--success-color); display:flex; align-items:center; gap:6px;"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Username is available</span>';
@@ -1631,7 +1610,6 @@
                     await updatePassword(auth.currentUser, pass);
                     const now = Date.now();
 
-                    // USERNAME AS DOCUMENT ID INTEGRATION
                     const currentDevice = getDeviceName();
                     await setDoc(doc(db, "users", regData.username), {
                         uid: auth.currentUser.uid,
@@ -1649,7 +1627,8 @@
                             lastLogin: now,
                             devices: [currentDevice],
                             sessionActive: true
-                        }
+                        },
+                        logs: []
                     }, {
                         merge: true
                     });
@@ -1663,7 +1642,7 @@
                         document.getElementById('reg-process-loading').classList.add('hidden');
                         document.getElementById('reg-process-success').classList.remove('hidden');
                         await signOut(auth);
-                    }, 2000); // 2s simulated smooth processing
+                    }, 2000);
                 }
             } catch (e) {
                 showToast("Account finalization encountered an error: " + e.message, "error");
@@ -1691,8 +1670,6 @@
                     btn.disabled = false;
                     return showToast("Account restricted. Please verify your email first.", "error");
                 }
-
-                // Real-time device registration to Firestore handled in onAuthStateChanged
                 document.getElementById('form-login').reset();
             } catch (e) {
                 showToast("Authentication failed. Invalid credentials.", "error");
@@ -1702,10 +1679,9 @@
         };
 
         window.handleLogout = async function() {
-            showGlobalLoader("Closing secure session...");
+            showGlobalLoader("Signing out...");
             try {
                 if (currentUserDocId) {
-                    // Update Firebase status before logging out
                     await updateDoc(doc(db, "users", currentUserDocId), {
                         "security.sessionActive": false
                     });
@@ -1717,7 +1693,7 @@
             setTimeout(async () => {
                 await signOut(auth);
                 hideGlobalLoader();
-            }, 1200); // Smooth fade
+            }, 1200);
         };
 
         window.handleResetPassword = async function() {
@@ -1750,12 +1726,9 @@
             res.innerHTML = '<div class="skeleton" style="width:180px;height:20px;margin:0 auto;border-radius:10px;"></div>';
 
             try {
-                // Optimized query directly using document ID
                 const docSnap = await getDoc(doc(db, "users", un));
                 if (docSnap.exists()) {
                     const em = docSnap.data().auth.email;
-
-                    // Email Masking Algorithm (ha*****345@gmail.com)
                     const [name, domain] = em.split('@');
                     let maskedName;
                     if (name.length > 5) {
@@ -1776,7 +1749,6 @@
             btn.innerHTML = 'Search Account';
         };
 
-        // --- DEVICE MANAGEMENT FUNCTIONALITY ---
         window.openDeviceManagement = function() {
             const list = document.getElementById('device-list-container');
             list.innerHTML = '';
@@ -1808,12 +1780,25 @@
         window.removeSingleDevice = async function(devName) {
             showGlobalLoader("Revoking device access...");
             try {
+                const currentDev = getDeviceName();
                 const newDevices = currentUserData.security.devices.filter(d => d !== devName);
+
                 await updateDoc(doc(db, "users", currentUserDocId), {
-                    "security.devices": newDevices
+                    "security.devices": newDevices,
+                    "security.revokeEvent": {
+                        revokedDevice: devName,
+                        revokedBy: currentDev,
+                        timestamp: Date.now()
+                    },
+                    logs: arrayUnion({
+                        action: "Device Revoked",
+                        details: `Peranti ${devName} dilog keluar oleh ${currentDev}`,
+                        timestamp: Date.now()
+                    })
                 });
+
                 currentUserData.security.devices = newDevices;
-                openDeviceManagement(); // Re-render
+                openDeviceManagement();
                 showToast("Device revoked securely.", "success");
             } catch (e) {
                 showToast(e.message, "error");
@@ -1826,7 +1811,12 @@
             try {
                 const currentDev = getDeviceName();
                 await updateDoc(doc(db, "users", currentUserDocId), {
-                    "security.devices": [currentDev]
+                    "security.devices": [currentDev],
+                    logs: arrayUnion({
+                        action: "Sign Out All Devices",
+                        details: `Semua peranti lain dilog keluar secara serentak oleh ${currentDev}`,
+                        timestamp: Date.now()
+                    })
                 });
                 currentUserData.security.devices = [currentDev];
                 openDeviceManagement();
@@ -1837,20 +1827,17 @@
             hideGlobalLoader();
         };
 
-        // --- DASHBOARD & AUTH STATE ---
         onAuthStateChanged(auth, async (user) => {
             if (user && user.emailVerified) {
-                showGlobalLoader("Syncing cryptographic profile...");
+                showGlobalLoader("Loading your account...");
                 try {
-                    // Finding the Document ID using the UID (since Doc ID = Username)
                     const q = query(collection(db, "users"), where("uid", "==", user.uid));
                     const snap = await getDocs(q);
 
                     if (!snap.empty) {
-                        currentUserDocId = snap.docs[0].id; // The username
+                        currentUserDocId = snap.docs[0].id;
                         currentUserData = snap.docs[0].data();
 
-                        // Register Current Device dynamically
                         const currentDevice = getDeviceName();
                         let devicesArr = currentUserData.security?.devices || [];
                         if (!devicesArr.includes(currentDevice)) devicesArr.push(currentDevice);
@@ -1862,9 +1849,29 @@
                         });
                         currentUserData.security.devices = devicesArr;
 
+                        if (sessionListener) sessionListener();
+                        sessionListener = onSnapshot(doc(db, "users", currentUserDocId), async (docSnap) => {
+                            if (!docSnap.exists()) return;
+                            const data = docSnap.data();
+
+                            if (data.security?.revokeEvent && data.security.revokeEvent.revokedDevice === currentDevice) {
+                                const revokedBy = data.security.revokeEvent.revokedBy;
+                                await updateDoc(doc(db, "users", currentUserDocId), {
+                                    "security.revokeEvent": null
+                                });
+                                alert(`Anda terkeluar dari akaun kerana di log out oleh ${revokedBy}`);
+                                await signOut(auth);
+                                window.location.reload();
+                            }
+                            else if (data.security?.devices && !data.security.devices.includes(currentDevice)) {
+                                alert(`Anda terkeluar dari akaun kerana sesi ditamatkan oleh peranti utama.`);
+                                await signOut(auth);
+                                window.location.reload();
+                            }
+                        });
+
                         navigate('dashboard');
 
-                        // Reset login button if navigated from login
                         const btn = document.getElementById('btn-login');
                         if (btn) {
                             btn.innerHTML = 'Sign In';
@@ -1879,6 +1886,7 @@
             } else {
                 currentUserDocId = null;
                 currentUserData = null;
+                if (sessionListener) sessionListener();
                 clearInterval(verifyPollInterval);
                 if (document.getElementById('dashboard-group').classList.contains('hidden') === false || document.getElementById('view-home').classList.contains('hidden') === false) {
                     navigate('home');
@@ -1927,9 +1935,9 @@
         }
 
         window.openAction = function(type) {
-            if (isChangeLocked && type !== 'security') return showToast("Modifications are locked during the 24h cooldown.", "error");
+            if (isChangeLocked && type !== 'security' && type !== 'logdata') return showToast("Modifications are locked during the 24h cooldown.", "error");
 
-            showGlobalLoader("Accessing module...");
+            showGlobalLoader("Loading module...");
             setTimeout(() => {
                 hideGlobalLoader();
                 if (type === 'name') {
@@ -1947,11 +1955,15 @@
                     openModal('modal-username');
                 } else if (type === 'security') {
                     openModal('modal-security');
+                } else if (type === 'logdata') {
+                    document.getElementById('logdata-auth-section').classList.remove('hidden');
+                    document.getElementById('logdata-content-section').classList.add('hidden');
+                    document.getElementById('logdata-password').value = '';
+                    openModal('modal-logdata');
                 }
-            }, 400); // 400ms smooth artificial delay for premium feel
+            }, 400);
         };
 
-        // --- DASHBOARD ACTIONS ---
         window.previewNameChange = function() {
             const val = document.getElementById('change-name-input').value || currentUserData.profile.displayName;
             document.getElementById('preview-name-after').innerText = val;
@@ -1960,11 +1972,16 @@
         window.submitChangeName = async function() {
             const val = document.getElementById('change-name-input').value.trim();
             if (val.length < 2) return showToast("Profile name must be longer.", "error");
-            showGlobalLoader("Syncing new profile name...");
+            showGlobalLoader("Updating your profile...");
             try {
                 await updateDoc(doc(db, "users", currentUserDocId), {
                     "profile.displayName": val,
-                    "profile.lastUpdated": Date.now()
+                    "profile.lastUpdated": Date.now(),
+                    logs: arrayUnion({
+                        action: "Profile Name Changed",
+                        details: `Tukar dari ${currentUserData.profile.displayName} kepada ${val}`,
+                        timestamp: Date.now()
+                    })
                 });
                 currentUserData.profile.displayName = val;
                 loadDashboard();
@@ -1985,14 +2002,16 @@
             btn.disabled = true;
 
             try {
+                // 1. Hantar emel pengesahan ke emel baru
                 await verifyBeforeUpdateEmail(auth.currentUser, val);
-                showToast("Secure verification link dispatched to new email.", "success");
+                showToast("Secure verification link dispatched to new email. After your Email Has Been Verified and Changed, We will Sign you out and you Must Re Sign In with your new email.", "success");
                 btn.classList.add('hidden');
 
                 const resendBtn = document.getElementById('btn-resend-change-email');
                 resendBtn.classList.remove('hidden');
                 resendBtn.disabled = true;
 
+                // Timer resend
                 let t = 30;
                 const span = document.getElementById('change-email-timer');
                 const int = setInterval(() => {
@@ -2003,18 +2022,59 @@
                         resendBtn.disabled = false;
                     }
                 }, 1000);
+
+                // 2. Polling untuk check status pengesahan
+                let verifyPollEmailInterval = setInterval(async () => {
+                    await auth.currentUser.reload();
+                    
+                    // Check jika emel sudah bertukar di Firebase
+                    if (auth.currentUser.email === val) {
+                        clearInterval(verifyPollEmailInterval);
+
+                        // Update Firestore
+                        await updateDoc(doc(db, "users", currentUserDocId), {
+                            "auth.email": val,
+                            logs: arrayUnion({
+                                action: "Email Address Changed",
+                                details: `Tukar dari ${currentUserData.auth.email} kepada ${val}`,
+                                timestamp: Date.now()
+                            })
+                        });
+
+                        currentUserData.auth.email = val;
+                        closeModal(); // Tutup modal terus supaya pengguna tak keliru
+                        
+                        // 3. Inform pengguna dan Logout
+                        showToast("Your New Email Has Been Verified and Changed!.", "success");
+                        
+                        setTimeout(async () => {
+                            window.location.reload(); // Refresh untuk balik ke skrin login
+                        }, 5000); // Tunggu 5 saat untuk pengguna baca toast
+                    }
+                }, 3000);
+
             } catch (e) {
-                if (e.code === 'auth/requires-recent-login') showToast("Security Timeout: Please sign out and sign back in to perform this sensitive action.", "error");
-                else showToast(e.message, "error");
+                if (e.code === 'auth/requires-recent-login') {
+                    showToast("Security Timeout: Please sign out and sign back in to perform this sensitive action.", "error");
+                } else {
+                    showToast(e.message, "error");
+                }
+                btn.innerHTML = 'Send Verification Link';
+                btn.disabled = false;
             }
-            btn.innerHTML = 'Send Verification Link';
-            btn.disabled = false;
         };
 
         window.submitChangePassword = async function() {
-            showGlobalLoader("Generating cryptographic token...");
+            showGlobalLoader("Preparing secure link...");
             try {
                 await sendPasswordResetEmail(auth, currentUserData.auth.email);
+                await updateDoc(doc(db, "users", currentUserDocId), {
+                    logs: arrayUnion({
+                        action: "Password Reset Requested",
+                        details: `Pautan reset password dihantar ke emel`,
+                        timestamp: Date.now()
+                    })
+                });
                 showToast("Secure token dispatched to your email.", "success");
                 closeModal();
             } catch (e) {
@@ -2053,10 +2113,9 @@
 
         window.submitChangeUsername = async function() {
             const val = document.getElementById('change-username-input').value.trim();
-            showGlobalLoader("Migrating database architecture...");
+            showGlobalLoader("Migrating account details...");
 
             try {
-                // Since Doc ID = Username, modifying username requires migrating to a new document
                 const oldDocRef = doc(db, "users", currentUserDocId);
                 const newDocRef = doc(db, "users", val);
 
@@ -2066,10 +2125,16 @@
                 newData.profile.username = val;
                 newData.profile.lastUpdated = Date.now();
 
-                await setDoc(newDocRef, newData); // Write to new Doc ID
-                await deleteDoc(oldDocRef); // Remove old Doc ID
+                if (!newData.logs) newData.logs = [];
+                newData.logs.push({
+                    action: "Username Migrated",
+                    details: `Tukar dari ${currentUserData.profile.username} kepada ${val}`,
+                    timestamp: Date.now()
+                });
 
-                // Migrate lock config as well
+                await setDoc(newDocRef, newData);
+                await deleteDoc(oldDocRef);
+
                 const oldLockRef = doc(db, "profile_change_lock", currentUserDocId);
                 const newLockRef = doc(db, "profile_change_lock", val);
                 const lockSnap = await getDoc(oldLockRef);
@@ -2089,6 +2154,33 @@
             }
 
             hideGlobalLoader();
+        };
+
+        window.verifyLogDataPassword = async function() {
+            const pass = document.getElementById('logdata-password').value;
+            if (!pass) return showToast("Sila masukkan kata laluan.", "error");
+
+            const btn = document.getElementById('btn-verify-logdata');
+            btn.innerHTML = '<div class="spinner" style="width:16px; height:16px; border-width:2px;"></div> Mengesahkan...';
+            btn.disabled = true;
+
+            try {
+                const credential = EmailAuthProvider.credential(currentUserData.auth.email, pass);
+                await reauthenticateWithCredential(auth.currentUser, credential);
+
+                const docSnap = await getDoc(doc(db, "users", currentUserDocId));
+                const rawData = docSnap.exists() ? docSnap.data() : currentUserData;
+
+                document.getElementById('logdata-auth-section').classList.add('hidden');
+                document.getElementById('logdata-content-section').classList.remove('hidden');
+                document.getElementById('logdata-raw-json').textContent = JSON.stringify(rawData, null, 4);
+                showToast("Authentication success, showing raw log data....", "success");
+            } catch (e) {
+                showToast("Kata laluan tidak sah atau sambungan ralat.", "error");
+            }
+
+            btn.innerHTML = 'Sahkan Identiti';
+            btn.disabled = false;
         };
 
         // Init
