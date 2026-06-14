@@ -1,23 +1,21 @@
 {
   "name": "Blyns Account",
   "short_name": "Blyns",
-  "description": "Manage your Blyns account, profile and security.",
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#0A84FF",
-  "background_color": "#F5F5F7",
   "icons": [
     {
-      "src": "android-chrome-192x192.png",
+      "src": "/web-app-manifest-192x192.png?v=20260614",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
-      "src": "android-chrome-512x512.png",
+      "src": "/web-app-manifest-512x512.png?v=20260614",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
-  ]
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
 }
